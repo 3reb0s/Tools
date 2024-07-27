@@ -12,7 +12,7 @@ Expand-Archive -Path $zipPath -DestinationPath $extractPath -Force
 
 $psexecPath = Join-Path $extractPath "PsExec.exe"
 
-Start-Process -FilePath $psexecPath -ArgumentList "/?" -NoNewWindow -Wait
+Start-Process -FilePath $psexecPath -ArgumentList "/accepteula /?" -Wait
 
 Remove-Item -Path $zipPath -Force
 Remove-Item -Path $extractPath -Recurse -Force
