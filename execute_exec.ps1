@@ -10,8 +10,5 @@ if (-not (Test-Path $extractPath)) {
 
 Expand-Archive -Path $zipPath -DestinationPath $extractPath -Force
 
-$psexecPath = Join-Path $extractPath "PsExec.exe"
-
-Start-Process -FilePath $psexecPath -ArgumentList "/accepteula /?" -Wait
-
+# Clean up
 Remove-Item -Path $zipPath -Force
